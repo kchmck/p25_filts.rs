@@ -1,0 +1,8 @@
+[package]
+name = "p25_filts"
+version = "1.0.0"
+authors = ["Mick Koch <mick@kochm.co>"]
+
+[dependencies]
+dsp = {version = "1.0.0", path = "../dsp"}
+num = "0.1.34"
