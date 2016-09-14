@@ -1,7 +1,7 @@
 extern crate num;
 
 #[macro_use]
-extern crate dsp;
+extern crate static_fir;
 
 use num::complex::Complex32;
 
@@ -336,7 +336,7 @@ impl_fir!(BandpassFIR, Complex32, 65, [
 #[cfg(test)]
 mod test {
     use super::*;
-    use dsp::fir::FIRCoefs;
+    use static_fir::FIRCoefs;
 
     #[test]
     fn verify_symmetry() {

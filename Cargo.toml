@@ -4,5 +4,5 @@ version = "1.0.0"
 authors = ["Mick Koch <mick@kochm.co>"]
 
 [dependencies]
-dsp = {version = "1.0.0", path = "../dsp"}
+static_fir = {version = "1.0.0", path = "../static_fir"}
 num = "0.1.34"
