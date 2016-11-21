@@ -5,8 +5,8 @@ extern crate static_fir;
 
 use num::complex::Complex32;
 
-/// Construct a FIR filter approximating the frequency response of the "Nyquist Raised
-/// Cosine" filter described in the P25 standard.
+/// FIR filter approximating the frequency response of the "Nyquist Raised Cosine"
+/// impulse shaping filter described in the P25 standard.
 impl_fir!(RaisedCosineFIR, f32, 121, [
     -0.0000000000000000,
     -0.0002914178875877,
@@ -131,7 +131,7 @@ impl_fir!(RaisedCosineFIR, f32, 121, [
     -0.0000000000000000,
 ]);
 
-/// Construct a FIR filter that approximates the frequency response of the "Shaping"
+/// FIR filter approximating the frequency response of the "Shaping" preemphasis
 /// filter described in the P25 standard.
 impl_fir!(PreemphFIR, f32, 39, [
     -0.0178961626433530,
@@ -175,8 +175,8 @@ impl_fir!(PreemphFIR, f32, 39, [
     -0.0178961626433530,
 ]);
 
-/// Construct a filter that approximates the frequency response of the "Integrate and
-/// Dump" filter described in the P25 standard.
+/// FIR filter approximating the frequency response of the "Integrate and Dump" 
+/// deemphasis filter described in the P25 standard.
 impl_fir!(DeemphFIR, f32, 39, [
     -0.0000000279259602,
     -0.0000004257533422,
@@ -219,7 +219,8 @@ impl_fir!(DeemphFIR, f32, 39, [
     -0.0000000279259602,
 ]);
 
-/// Lowpass filter with passband to 4kHz and stopband after 24kHz.
+/// Lowpass FIR filter with passband to 4kHz and stopband after 24kHz for
+/// antialiasing when decimating from 240kHz to 48kHz sample rate.
 impl_fir!(DecimFIR, Complex32, 41, [
     0.000786541581019716,
     0.000597016981378991,
@@ -264,7 +265,8 @@ impl_fir!(DecimFIR, Complex32, 41, [
     0.000786541581019716,
 ]);
 
-/// Low pass filter with stopband after 5kHz.
+/// Lowpass FIR filter with stopband after 5kHz for rejecting spectrum outside
+/// 6.25kHz P25 sidebands.
 impl_fir!(BandpassFIR, Complex32, 65, [
     -0.000688950539173326,
     -0.000271272708869335,
