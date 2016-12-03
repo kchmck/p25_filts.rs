@@ -4,5 +4,5 @@ version = "1.0.0"
 authors = ["Mick Koch <mick@kochm.co>"]
 
 [dependencies]
-static_fir = {version = "1.0.0", path = "../static_fir"}
+static_fir = {version = "1.0.0", git = "https://github.com/kchmck/static_fir.rs"}
 num = "0.1.34"
