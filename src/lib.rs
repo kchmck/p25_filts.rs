@@ -294,7 +294,7 @@ impl_fir!(BandpassFIR, Complex32, 65, [
 #[cfg(test)]
 mod test {
     use super::*;
-    use static_fir::FIRCoefs;
+    use static_fir::FirCoefs;
 
     #[test]
     fn verify_symmetry() {
