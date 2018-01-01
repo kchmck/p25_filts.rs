@@ -7,7 +7,7 @@ use num::complex::Complex32;
 
 /// FIR filter approximating the frequency response of the "Nyquist Raised Cosine"
 /// impulse shaping filter described in the P25 standard.
-impl_fir!(RaisedCosineFIR, f32, 121, [
+impl_fir!(RaisedCosineFir, f32, 121, [
     -0.0000000000000000,
     -0.0002914178875877,
     -0.0006110820215192,
@@ -133,7 +133,7 @@ impl_fir!(RaisedCosineFIR, f32, 121, [
 
 /// FIR filter approximating the frequency response of the "Shaping" preemphasis
 /// filter described in the P25 standard.
-impl_fir!(PreemphFIR, f32, 39, [
+impl_fir!(PreemphFir, f32, 39, [
     -0.0178961626433530,
     0.0346928432330632,
     0.0163584472672260,
@@ -177,7 +177,7 @@ impl_fir!(PreemphFIR, f32, 39, [
 
 /// Lowpass FIR filter with passband to 4kHz and stopband after 24kHz for
 /// antialiasing when decimating from 240kHz to 48kHz sample rate.
-impl_fir!(DecimFIR, Complex32, 41, [
+impl_fir!(DecimFir, Complex32, 41, [
     0.000786541581019716,
     0.000597016981378991,
     0.000396862662678544,
@@ -223,7 +223,7 @@ impl_fir!(DecimFIR, Complex32, 41, [
 
 /// Lowpass FIR filter with stopband after 5kHz for rejecting spectrum outside
 /// 6.25kHz P25 sidebands.
-impl_fir!(BandpassFIR, Complex32, 65, [
+impl_fir!(BandpassFir, Complex32, 65, [
     -0.000688950539173326,
     -0.000271272708869335,
     0.000360610486496777,
@@ -298,9 +298,9 @@ mod test {
 
     #[test]
     fn verify_symmetry() {
-        RaisedCosineFIR::verify_symmetry();
-        PreemphFIR::verify_symmetry();
-        DecimFIR::verify_symmetry();
-        BandpassFIR::verify_symmetry();
+        RaisedCosineFir::verify_symmetry();
+        PreemphFir::verify_symmetry();
+        DecimFir::verify_symmetry();
+        BandpassFir::verify_symmetry();
     }
 }
